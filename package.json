@@ -1,0 +1,17 @@
+{
+  "name": "crypto-analytics",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm:dev:*\"",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "start": "node backend/server.js",
+    "build": "npm --prefix frontend run build",
+    "build:all": "npm run build && echo \"Frontend built\"",
+    "docker:build": "docker build -t crypto-analytics:latest ."
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
